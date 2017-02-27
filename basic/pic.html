@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script>
+function test()
+{
+    x = document.getElementById("tt");
+    x.innerHTML="<p>ha ha ha</p>"
+}
+function change()
+{
+    x = document.getElementById("myimage");
+    if(x.src.match("1.jpg"))
+    {
+        x.src="light2.jpg";
+    }
+    else{
+        x.src="light1.jpg";
+    }
+}
+</script>
+<body>
+<img id="myimage" width="512" height="288" src="light2.jpg">
+<p id="tt">good morning</p>
+
+<button type="button" onclick="test()">click here</button>
+<button type="button" onclick="change()">change the picture</button>
+</body>
+</html>
