@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+	function Show(n,m)
+	{
+		document.getElementById("ZH").style.display="none";
+		document.getElementById("GG").style.display="none";
+		document.getElementById("LT").style.display="none";
+		document.getElementById("MT").style.display="none";
+	
+		document.getElementById(n).style.display="block";
+
+	m.style.backgroundColor="#2E135a";
+		
+	}
+	function Out(m)
+	{
+		m.style.backgroundColor="#2E325C";
+	}
+</script>
+
+<style type="text/css">
+#Top div
+{
+	width:80px;
+	height:30px;
+	background-color:#2E325C;
+	position:relative;
+	left:20px;
+	float:left;
+	text-align:center;
+	vertical-align:middle;
+	padding-top:10px;
+}
+a
+{
+	color:#FFF;
+	text-decoration:none;
+	vertical-align:middle;
+	
+}
+#text div
+{
+	width:320px;
+	height:320px;
+	display:none;
+	background-color:#4E4B74;
+	z-index:10;
+}
+#text
+{
+	position:absolute;
+	top:48px;
+	left:28px;
+}
+</style>
+</head>
+
+<body>
+<div id="Top">
+<div onmouseover="Show('ZH',this);" onmouseout="Out(this)"><a href="#" >综合</a></div>
+<div onmouseover="Show('GG',this)" onmouseout="Out(this)"><a href="#">公告</a></div>
+<div onmouseover="Show('LT',this)" onmouseout="Out(this)"><a href="#">论坛</a></div>
+<div onmouseover="Show('MT',this)" onmouseout="Out(this)"><a href="#">媒体</a></div></div>
+<div id="text">
+	<div id="ZH">北京时间9月4日，中国男篮于3日在深圳宝安体育馆以69-56战胜墨尔本海尔澳洲虎队，
+走出了欧洲拉练五连败的阴影</div>
+    <div id="GG">尽管这场比赛是姚明4个月中的第一场比赛，而且他已经将近三周没有正常训练，
+刚刚恢复训练一周左右，和全队合练不到一周</div>
+    <div id="LT">但是姚明还是体现了一位球星的
+适应能力和调整能力。这场比赛，他上场达到25分钟</div>
+    <div id="MT">比赛前的预测都要时间更长。
+而且拿下了12分8个篮板，而3个重扣，更是鼓舞了队友的士气</div>
+</div>
+</body>
+</html>

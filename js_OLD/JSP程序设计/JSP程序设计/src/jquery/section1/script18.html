@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>样式操作</title>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+           $("span").bind("click",function(event){
+		     var txt = $("#msg").html()+"<p>内层span元素被单击</p>";
+			 $("#msg").html(txt);
+			 //event.stopPropagation();
+			});
+			$("#divhello").bind("click",function(){
+		     var txt = $("#msg").html()+"<p>外层div元素被单击</p>";
+			 $("#msg").html(txt);
+			 //return false;
+			});
+			$("body").bind("click",function(){
+		     var txt = $("#msg").html()+"<p>body元素被单击</p>";
+			 $("#msg").html(txt);
+			});
+			
+			$("a").click(function(e){
+			    var txt = $("#msg").html()+"<p>a元素被单击</p>";
+			    $("#msg").html(txt);
+				//e.stopPropagation();
+			    e.preventDefault();//阻止默认行为
+			});
+        });
+	
+		
+    </script>
+    <style type="text/css">
+        .class1{background:red; width:200px; height:100px; text-align:center;}
+        .class2{font-size:20px; width:200px; height:100px; background:yellow; display:inline; margin:0 auto; }
+        .night{background:black;}
+    </style>
+</head>
+<body>
+ <div id="divhello" class="class1">  
+    <span id="span1" class="class2">信息学院  </span>
+ </div>
+
+ <div id="msg">信息工程学院</div>
+ 
+ </br>
+ </br>
+ 
+ <a href="http://www.yzu.edu.cn" title="扬州大学" >扬州大学</a>
+</body>
+</html>

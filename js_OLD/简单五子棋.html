@@ -1,0 +1,300 @@
+<html>
+ <head>
+   <title>五子棋</title>
+   <style type="text/css">
+   table{background-image:url(image/棋盘.jpg);}
+   .tdBlack{ background-image:url(image/black.png);
+         }
+   .tdWhite{  background-image:url(image/white.png);
+         }
+   </style>
+   <script type="text/javascript">
+      window.onload=initAll;
+      var flag=false;
+      var a = new Array(100);
+      var n = 5;
+      var kStar = 0;
+      var next = 0;
+      var hang = 10, lie = 10;
+      function initAll(){
+         for(var i=0;i<100;i++){
+             a[i] = 0;
+            document.getElementById(i).className="";
+                document.getElementById(i).onclick=fillColor;
+                document.getElementById(i).onclick=fillColor;
+          }
+       }
+       function fillColor(evt){
+           if(evt){
+              var thisSquare=evt.target;
+           }
+           else{
+              var thisSquare=window.event.srcElement;
+           }
+           if(thisSquare.className==""){
+              if(flag==false){
+                thisSquare.className = "tdBlack";
+                a[thisSquare.id] = 1;
+                flag=true;
+                }
+              else{
+                  thisSquare.className = "tdWhite";
+                  a[thisSquare.id] = 2;
+                  flag=false;
+              }
+          }
+          //判断—方向
+          for (var i = 0; i < 10; i++) {
+              for (var j = 0; j <= 10 - n; j++) {
+                  var addBlack = 0, addWhite = 0;
+                  kStar = i * 10 + j;
+                  next = kStar;
+                  for (var x = 0; x < n; x++) {
+                      var temp = parseInt(a[next]);
+                      if (temp == 1) {
+                          addBlack = addBlack + temp;
+                          if (addBlack >= n) {
+                              alert("黑方获胜！");
+                              parent.location.reload(); return;
+                          }
+                          next = next + 1;
+                      }
+                      if (temp == 2) {
+                          addWhite = addWhite + (temp - 1);
+                          if (addWhite >= n) {
+                              alert("白方获胜！");
+                              parent.location.reload(); return;
+                          }
+                          next = next + 1;
+                      }
+                  }
+              }
+          }
+
+          //判断|方向
+          for (var i = 0; i <= 10 - n; i++) {
+              for (var j = 0; j < 10; j++) {
+                  var addBlack = 0, addWhite = 0;
+                  kStar = i * 10 + j;
+                  next = kStar;
+                  for (var x = 0; x < n; x++) {
+                      var temp = parseInt(a[next]);
+                      if (temp == 1) {
+                          addBlack = addBlack + temp;
+                          if (addBlack >= n) {
+                              alert("黑方获胜！");
+                              parent.location.reload(); return;
+                          }
+                          next = next + 10; 
+                      }
+                      if (temp == 2) {
+                          addWhite = addWhite + (temp - 1);
+                          if (addWhite >= n) {
+                              alert("白方获胜！");
+                              parent.location.reload(); return;
+                          }
+                          next = next + 10;
+                      }
+                  }
+              }
+
+          }
+
+          //判断\方向
+           for (var i = 0; i <= 10 - n; i++) {
+              for (var j = n - 1; j < 10; j++) {
+                 var addBlack = 0, addWhite = 0;
+                   kStar = i * 10 + j;
+                     next = kStar;
+                      for (var x = 0; x < n; x++) {
+                         var temp = parseInt(a[next]);
+                          if (temp == 1) {
+                              addBlack = addBlack + temp;
+                              if (addBlack >= n) {
+                                  alert("黑方获胜！");
+                                  parent.location.reload(); return;
+                              }
+                              next = next + 10 - 1;
+                          }
+                          if (temp == 2) {
+                              addWhite = addWhite + (temp - 1);
+                              if (addWhite >= n) {
+                                  alert("白方获胜！");
+                                  parent.location.reload(); return;
+                              }
+                              next = next + 10 - 1;
+                          }
+                      }
+                  }
+              }
+          //判断/方向
+          for (var i = 0; i <= 10 - n; i++) {
+              for (var j = 0; j <= 10 - n; j++) {
+                  var addBlack = 0, addWhite = 0;
+                  kStar = i * 10 + j;
+                  next = kStar;
+                  for (var x = 0; x < n; x++) {
+                      var temp = parseInt(a[next]);
+                      if (temp == 1) {
+                          addBlack = addBlack + temp;
+                          if (addBlack >= n) {
+                              alert("黑方获胜！");
+                              parent.location.reload(); return;
+                          }
+                          next = next + 10 + 1;
+                      }
+                      if (temp == 2) {
+                          addWhite = addWhite + (temp - 1);
+                          if (addWhite >= n) {
+                              alert("白方获胜！");
+                              parent.location.reload(); return;
+                          }
+                          next = next + 10 + 1;
+                      }
+                  }
+              }
+
+          }
+          //和棋
+          var peace = 0;
+          for (var i = 0; i < 100; i++) {
+              var temp = parseInt(a[i]);
+              if (temp != 0) {
+                  peace = peace + 1;
+
+              }
+          }
+          if (peace == 10 * 10) {
+              alert("和棋！");
+              parent.location.reload();
+              return;
+          }
+               }
+    </script>
+ </head>
+ <body>
+   <h1>五子棋</h1>
+   <table id="tables" border="0" width=402 height=403>
+      <tr>
+        <td id="0"></td>
+        <td id="1"></td>
+        <td id="2"></td>
+        <td id="3"></td>
+        <td id="4"></td>
+        <td id="5"></td>
+        <td id="6"></td>
+        <td id="7"></td>
+        <td id="8"></td>
+        <td id="9"></td>
+      </tr>
+      <tr>
+        <td id="10"></td>
+        <td id="11"></td>
+        <td id="12"></td>
+        <td id="13"></td>
+        <td id="14"></td>
+        <td id="15"></td>
+        <td id="16"></td>
+        <td id="17"></td>
+        <td id="18"></td>
+        <td id="19"></td>
+      </tr>
+      <tr>
+        <td id="20"></td>
+        <td id="21"></td>
+        <td id="22"></td>
+        <td id="23"></td>
+        <td id="24"></td>
+        <td id="25"></td>
+        <td id="26"></td>
+        <td id="27"></td>
+        <td id="28"></td>
+        <td id="29"></td>
+      </tr>
+      <tr>
+        <td id="30"></td>
+        <td id="31"></td>
+        <td id="32"></td>
+        <td id="33"></td>
+        <td id="34"></td>
+        <td id="35"></td>
+        <td id="36"></td>
+        <td id="37"></td>
+        <td id="38"></td>
+        <td id="39"></td>
+      </tr>
+      <tr>
+        <td id="40"></td>
+        <td id="41"></td>
+        <td id="42"></td>
+        <td id="43"></td>
+        <td id="44"></td>
+        <td id="45"></td>
+        <td id="46"></td>
+        <td id="47"></td>
+        <td id="48"></td>
+        <td id="49"></td>
+      </tr>
+      <tr>
+        <td id="50"></td>
+        <td id="51"></td>
+        <td id="52"></td>
+        <td id="53"></td>
+        <td id="54"></td>
+        <td id="55"></td>
+        <td id="56"></td>
+        <td id="57"></td>
+        <td id="58"></td>
+        <td id="59"></td>
+      </tr>
+      <tr>
+        <td id="60"></td>
+        <td id="61"></td>
+        <td id="62"></td>
+        <td id="63"></td>
+        <td id="64"></td>
+        <td id="65"></td>
+        <td id="66"></td>
+        <td id="67"></td>
+        <td id="68"></td>
+        <td id="69"></td>
+      </tr>
+      <tr>
+        <td id="70"></td>
+        <td id="71"></td>
+        <td id="72"></td>
+        <td id="73"></td>
+        <td id="74"></td>
+        <td id="75"></td>
+        <td id="76"></td>
+        <td id="77"></td>
+        <td id="78"></td>
+        <td id="79"></td>
+      </tr>
+      <tr>
+        <td id="80"></td>
+        <td id="81"></td>
+        <td id="82"></td>
+        <td id="83"></td>
+        <td id="84"></td>
+        <td id="85"></td>
+        <td id="86"></td>
+        <td id="87"></td>
+        <td id="88"></td>
+        <td id="89"></td>
+      </tr>
+      <tr>
+        <td id="90"></td>
+        <td id="91"></td>
+        <td id="92"></td>
+        <td id="93"></td>
+        <td id="94"></td>
+        <td id="95"></td>
+        <td id="96"></td>
+        <td id="97"></td>
+        <td id="98"></td>
+        <td id="99"></td>
+      </tr>
+    </table>
+  </body>
+</html>

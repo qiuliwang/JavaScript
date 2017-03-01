@@ -1,0 +1,1160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="../Jquery/Script/jquery-1.6.js" type="text/javascript"></script>
+<script type="text/javascript">
+			var side=0;//0 表示向左移动  1 表示向右移动
+			var newMove=0;
+
+		function move()
+				{
+				
+					if(newMove==-2360)
+					{
+						side=1;
+					}
+					if(newMove==0)
+					{
+						
+						side=0;
+					}
+					
+				if(side==0)
+				{
+				newMove=-2360;
+				$("#divMove").animate({"margin-left":newMove+"px"},10000);
+				window.setTimeout("move()",10500);//停顿多长时间继续执行
+				}
+				else if(side==1)
+				{
+					newMove=0;
+					$("#divMove").animate({"margin-left":newMove+"px"},1000);
+				window.setTimeout("move()",1500);//停顿多长时间继续执行
+				}
+		
+				
+				}
+				 window.onload=move;
+	
+	$(function(){		
+		$(".mydiv").children("div").css("top","78px").css("display","none");
+		
+			$(".mydiv").mouseover(function(){
+				$(this).children("div").css("display","block").animate({"top":"78px","height":"50px"},"fast");
+			});
+			$(".mydiv").mouseout(function(){
+					$(this).children("div").css("display","none").css({"top":"128px","height":"50px"});
+			});		
+			
+		$(".zhoumian").children("div").css("top","0px").css("display","none");
+		$(".zhoumian").mouseover(function(){
+			$(this).children("div").css("display","block").animate({"top":"0px","height":"60px"},"fast");
+		});
+		$(".zhoumian").mouseout(function(){
+			$(this).children("div").css("display","none").css({"top":"0px","height":"60px"});
+		});		
+		
+		
+		$(".gaoliang").children("div").css("top","0px").css("display","none");
+		$(".gaoliang").mouseover(function(){
+			$(this).children("div").css("display","block");
+		});
+		$(".gaoliang").mouseout(function(){
+			$(this).children("div").css("display","none").css({"top":"0px","height":"121px"});
+		});		
+		
+		$("#walls").css("top","0px").css("display","none");
+		
+		$("#LOLRongyu").mouseover(function(){
+			$("#walls").css("display","block");
+		});
+		$("#LOLRongyu").mouseout(function(){
+			$("#walls").css("display","none").css({"top":"40px","height":"480px"});
+		});	
+		$("#walls").mouseover(function(){
+			$("#walls").css("display","block");
+		});
+		$("#walls").mouseout(function(){
+			$("#walls").css("display","none").css({"top":"40px","height":"480px"});
+		});
+		
+		$(".nodisplay").css("display","none");
+		
+		$("#jiajiliansai").mouseover(function(){
+			$("#jiajiliansaidiv").css("display","block");
+			$("#zhiyeliansaidiv").css("display","none");
+		    $("#demaxiyadiv").css("display","none");
+			$("#gaoxiaoliansaidiv").css("display","none");
+			$("#chengshizhengbadiv").css("display","none");
+			$("#QQwangbadiv").css("display","none");
+		});
+		
+		$("#zhiyeliansai").mouseover(function(){
+			$("#zhiyeliansaidiv").css("display","block");
+			$("#jiajiliansaidiv").css("display","none");
+			$("#demaxiyadiv").css("display","none");
+			$("#gaoxiaoliansaidiv").css("display","none");
+			$("#chengshizhengbadiv").css("display","none");
+			$("#QQwangbadiv").css("display","none");
+		});
+		
+		$("#demaxiya").mouseover(function(){
+			$("#demaxiyadiv").css("display","block");
+			$("#jiajiliansaidiv").css("display","none");
+			$("#zhiyeliansaidiv").css("display","none");
+			$("#gaoxiaoliansaidiv").css("display","none");
+			$("#chengshizhengbadiv").css("display","none");
+			$("#QQwangbadiv").css("display","none");
+		});
+		
+		$("#gaoxiaoliansai").mouseover(function(){
+			$("#gaoxiaoliansaidiv").css("display","block");
+			$("#demaxiyadiv").css("display","none");
+			$("#jiajiliansaidiv").css("display","none");
+			$("#zhiyeliansaidiv").css("display","none");
+			$("#chengshizhengbadiv").css("display","none");
+			$("#QQwangbadiv").css("display","none");
+		});
+		
+		$("#chengshizhengba").mouseover(function(){
+			$("#chengshizhengbadiv").css("display","block");
+			$("#gaoxiaoliansaidiv").css("display","none");
+			$("#demaxiyadiv").css("display","none");
+			$("#jiajiliansaidiv").css("display","none");
+			$("#zhiyeliansaidiv").css("display","none");
+			$("#QQwangbadiv").css("display","none");
+		});
+		
+		$("#QQwangba").mouseover(function(){
+			$("#QQwangbadiv").css("display","block");
+			$("#chengshizhengbadiv").css("display","none");
+			$("#gaoxiaoliansaidiv").css("display","none");
+			$("#demaxiyadiv").css("display","none");
+			$("#jiajiliansaidiv").css("display","none");
+			$("#zhiyeliansaidiv").css("display","none");
+		});
+		
+		$("#zhanzhengjiaji").mouseover(function(){
+			$("#zhanzhengjiajidiv").css("display","block");
+			$("#zhanzhengzhiyediv").css("display","none");
+		});
+		$("#zhanzhengzhiye").mouseover(function(){
+			$("#zhanzhengjiajidiv").css("display","none");
+			$("#zhanzhengzhiyediv").css("display","block");
+		});
+		
+		$("#zonghe").mouseover(function(){
+			$("#zonghegaoliang").css("display","block");
+			$("#zonghediv").css("display","block");
+			$("#gonggaogaoliang").css("display","none");
+			$("#gonggaodiv").css("display","none");
+			$("#meitigaoliang").css("display","none");
+			$("#meitidiv").css("display","none");
+			$("#luntangaoliang").css("display","none");
+			$("#luntandiv").css("display","none");
+		});
+		
+		$("#gonggao").mouseover(function(){
+			$("#zonghe").css("display","block");
+			$("#zonghegaoliang").css("display","none");
+			$("#zonghediv").css("display","none");
+			$("#gonggaogaoliang").css("display","block");
+			$("#gonggaodiv").css("display","block");
+			$("#meitigaoliang").css("display","none");
+			$("#meitidiv").css("display","none");
+			$("#luntangaoliang").css("display","none");
+			$("#luntandiv").css("display","none");
+		});
+		
+		$("#meiti").mouseover(function(){
+			$("#zonghegaoliang").css("display","none");
+			$("#zonghediv").css("display","none");
+			$("#gonggaogaoliang").css("display","none");
+			$("#gonggaodiv").css("display","none");
+			$("#meitigaoliang").css("display","block");
+			$("#meitidiv").css("display","block");
+			$("#luntangaoliang").css("display","none");
+			$("#luntandiv").css("display","none");
+		});
+		
+		$("#luntan").mouseover(function(){
+			$("#zonghegaoliang").css("display","none");
+			$("#zonghediv").css("display","none");
+			$("#gonggaogaoliang").css("display","none");
+			$("#gonggaodiv").css("display","none");
+			$("#meitigaoliang").css("display","none");
+			$("#meitidiv").css("display","none");
+			$("#luntangaoliang").css("display","block");
+			$("#luntandiv").css("display","block");
+		});
+		
+	});
+		
+		
+</script>
+
+<style type="text/css">
+body
+{
+	margin:0px;
+}
+table
+{
+	font-size:12px;
+}
+#table1
+{
+	color:#666;
+}
+a
+{   
+    color:#000; text-decoration:none;
+}
+
+#tableSaishiZhongxin
+{
+	text-decoration:none;	
+}
+
+#tabletop
+{
+	color:#FFF;
+
+}
+
+
+
+</style>
+</head>
+
+<body>
+<!--首页顶部-->
+<div id="DivHead" style="background-image:url(images/main-bg-v5.jpg); height:895px; background-repeat:no-repeat; width:1000px;">
+<!--顶部菜单及图片-->
+<div style="background-image:url(images/main-top-v5.jpg); height:464px;">
+<!--菜单导航-->
+<div style="position:absolute; left:10px; top:0px; width:980px; height:30px;">
+<table width="980px" height="30px">
+
+	<tr>
+    	<td align="left" width="326px" height="30px">
+        	<table width="326px" height="30px">
+            	<tr>
+                	<td><a href="#"><font color="#FFFFFF">官网首页</font></a></td>
+                    <td><a href="#"><font color="#FFFFFF">游戏资料</font></a></td>
+                    <td><a href="#"><font color="#FFFFFF">LOL商城</font></a></td>
+                    <td><a href="#"><font color="#FFFFFF">用户互动</font></a></td>
+                </tr>
+            </table>
+        </td>
+    	<td align="center" width="326px" height="30px"></td>
+		<td align="right" width="326px" height="30px">
+        <table width="326px" height="30px">
+            	<tr>
+                	<td><a href="#"><font color="#FFFFFF">赛事活动</font></a></td>
+                    <td><a href="#"><font color="#FFFFFF">自助系统</font></a></td>
+                    <td><a href="#"><font color="#FFFFFF">客服信息</font></a></td>
+                    <td><a href="#">
+                   	<div id="LOLRongyu" style="height:30px; width:82px;">
+                    	<table align="center">
+                    		<tr align="center" height="30px">
+                            	<td><font color="#FFFFFF">LOL荣誉</font>
+                            	</td>
+                            </tr>
+                    	</table>
+                  	</div>
+                    </a>
+                    </td>
+                </tr>
+          </table>
+        </td>
+    </tr>
+</table>
+</div>
+
+<div id="walls" align="center" style=" background-image:url(../%E5%9B%BE%E7%89%87/images/glory.png); width:450px; height:480px; position:absolute; left:540px; top:40px; z-index:5">
+<table id="tabletop" align="center" width="450px" height="400px" style="bottom:25px; position:absolute">
+<tr>
+	<td align="center" width="65px" height="26px"><img src="../图片/images/glory_pcgamer.png" /></td>
+  	<td><a href="#" style="color:#FFF">2012年2月 2011 PC-Gamer年度更新游戏大奖</a></td>
+</tr>
+
+<tr>
+	<td align="center" width="65px" headers="26px"><img src="../图片/images/glory_top10.png" /></td>
+  	<td><a href="#" style="color:#FFF">2012年1月 2011中国游戏风云榜“十大新锐网络游戏”、“最受欢迎网络游戏”、“最佳休闲竞技类网游”</a></td>
+</tr>
+
+<tr>
+	<td align="center" width="65px" headers="26px"><img src="../图片/images/glory_fengyu.png" /></td>
+  	<td><a href="#" style="color:#FFF">2012年1月 2011中国网游风云榜“中国年度最受欢迎网络游戏”、“中国年度最受欢迎2.5D网络游戏”、“中国年度最佳战略网游”、“中国年度推荐网游”</a></td>
+</tr>
+
+<tr>
+	<td align="center" width="65px" headers="26px"><img src="../图片/images/glory_gamespy.png" /></td>
+  	<td><a href="#" style="color:#FFF">2012年1月 Game Spy玩家投票“2011年度多人竞技游戏”</a></td>
+</tr>
+
+<tr>
+	<td align="center" width="65px" headers="26px"><img src="../图片/images/glory_jinling.png" /></td>
+  	<td><a href="#" style="color:#FFF">2011年11月 金翎奖“玩家最期待的网络游戏”</a></td>
+</tr>
+
+<tr>
+	<td align="center" width="65px" headers="26px"><img src="../图片/images/glory_jyg.png" /></td>
+  	<td><a href="#" style="color:#FFF">2010年11月 金摇杆奖“年度最佳网络游戏”</a></td>
+</tr>
+
+<tr>
+	<td align="center" width="65px" headers="26px"><img src="../图片/images/glory_gdc.png" /></td>
+  	<td><a href="#" style="color:#FFF">2010年10月 包揽GDC 2010五项大奖</a></td>
+</tr>
+
+<tr>
+	<td></td>
+  	<td><a href="#" style="color:#FFF">◼︎Audience Award 玩家最佳选择<br />◼︎Best Online Technology 最佳网络游戏开发技术</a></td>
+</tr>
+
+</table> 
+</div>
+
+<!--下载游戏--><center>
+<a href="#">
+<div id="MenuYX" style="width:227px; height:108px; position:absolute; left:10px; top:365px; background-image:url(../%E5%9B%BE%E7%89%87/images/public-v2_01.png)">
+</div>
+</a>
+
+<a href="#">
+<div class="gaoliang" style="width:121px; height:108px; position:absolute; left:237px; top:365px; background-image:url(../%E5%9B%BE%E7%89%87/images/public-v2_03.png); overflow:hidden">
+	<div style="height:108px; width:121px; background-image:url(../%E5%9B%BE%E7%89%87/images/public-v2_09.png)"></div>
+</div>
+</a>
+
+<a href="#">
+<div class="gaoliang" style="width:121px; height:108px; position:absolute; left:358px; top:365px; background-image:url(../%E5%9B%BE%E7%89%87/images/public-v2_05.png); overflow:hidden">
+	<div align="center" style="height:108px; width:121px; background-image:url(../%E5%9B%BE%E7%89%87/images/public-v2_11.png)"></div>
+</div>
+</a>
+
+<a href="#">
+<div class="gaoliang" style="width:121px; height:108px; position:absolute; left:479px; top:365px; background-image:url(../%E5%9B%BE%E7%89%87/images/public-v2_07.png); overflow:hidden">
+	<div align="center" style="height:108px; width:121px; background-image:url(../%E5%9B%BE%E7%89%87/images/public-v2_13.png)"></div>
+</div>
+</a>
+
+<br />
+<!--登录-->
+<div id="Login" style="position:absolute; left:602px; top:365px; background-color:#445678; width:390px; height:108px">
+<table width="390px" height="100px">
+	<tr>
+    	<td rowspan="2" width="120px" align="center"><img src="../图片/images/public-v2_15_06.png" width="80" height="80"/></td>
+        <td align="left">
+        	<p><font color="#FFFFFF">亲爱的召唤师，欢迎</font><a href="#"><font color="#00CC33">登录</font></a></p>
+        	<hr color="#3300CC" />
+        </td>
+    </tr>
+    <tr>
+        <td>登录后查看自己的英雄联盟游戏信息，包括<br />召唤师等级、游戏胜场数、账户信息、声望值等</td>
+    </tr>
+</table>
+</div>
+
+<!--滚动导航-->
+
+<div style="overflow:hidden; position:absolute; z-index:0; width:590px; height:280px; left:10px; top:480px">
+	<div id="divMove" style="width:2950px; height:280px; position:relative"><img src="../图片/images/1.jpg" /><img src="../图片/images/2.jpg" /><img src="../图片/images/3.jpg" /><img src="../图片/images/4.jpg" /><img src="../图片/images/5.jpg" />
+    </div>
+</div>
+
+<!--滚动导航右边-->
+<div style="position:absolute; left:602px; top:480px; width:390px; height:43px; background-color:#000">
+  <div id="zonghe" class="nodisplay" style="background-image:url(images/mainspr_11.png); height:43px; width:97px; position:absolute; left:0px;">			    </div>
+    <div id="zonghegaoliang"  style="background-image:url(images/mainspr_20.png); height:43px; width:97px; position:absolute; left:0px;">
+	</div>
+    
+    <div id="gonggao" style="background-image:url(images/mainspr_19.png); height:43px; width:97px; position:absolute; left:97px;">			    </div>
+  <div id="gonggaogaoliang" class="nodisplay" style="background-image:url(images/mainspr_26.png); height:43px; width:97px; position:absolute; left:97px;">
+	</div>
+    
+  <div id="meiti" style="background-image:url(images/mainspr_22-11.png); height:43px; width:97px; position:absolute; left:195px;">			    </div>
+    <div id="meitigaoliang" class="nodisplay" style="background-image:url(images/mainspr_04.png); height:43px; width:97px; position:absolute; left:194px;">
+	</div>
+    
+  <div id="luntan" style="background-image:url(images/mainspr_13.png); height:43px; width:97px; position:absolute; left:293px;">			    </div>
+    <div id="luntangaoliang" class="nodisplay" style="background-image:url(images/mainspr_08.png); height:43px; width:97px; position:absolute; left:291px;">
+	</div>
+    
+</div>
+    
+    
+<div id="zonghediv" style="position:absolute; left:602px; top:523px; width:390px; height:210px; background-color:#2C3242">
+<table height="210px" width="390px">
+<!--21DDAD    shen 151821-->
+			<tr>
+            	<td colspan="2" style="background-color:#151821" align="center"><a href="#"><font color="#21DDAD" size="+1">邀父母观战，LOL架起两代人通的桥梁</font></a></td>
+            </tr>
+			<tr height="25" align="left"><!--#9DA1AC-->
+        		<td width="305px">&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">英雄联盟LPL夏季赛八大豪强战队巡礼</font></a></td>
+				<td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+            <tr height="25" align="left">
+       			 <td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">阵容匹配系统灰度更新公告</font></a></td>
+           		 <td align="left"><font color="#9DA1AC">06/12</font></td>
+   		    </tr>
+         	<tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">重量级对抗今日上演 笑笑小楼助阵LSPL主题日</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+        	 <tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">2014LPL夏季赛现场门票发售观赛指南</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+       		 </tr>
+         	<tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">6月12日凌晨1点停机版本更新公告</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+         	<tr height="25" align="left">
+        		<td >&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">LSPL主题日开放 两级别联赛队伍联袂献战</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+   		    </tr>
+</table>
+</div>
+
+<!--公告-->    
+<div id="gonggaodiv" class="nodisplay" style="position:absolute; left:602px; top:523px; width:390px; height:210px; background-color:#2C3242">
+<table height="210px" width="390px">
+<!--21DDAD    shen 151821-->
+			<tr>
+            	<td colspan="2" style="background-color:#151821" align="center">><a href="#"><font color="#21DDAD" size="+1">班德尔城、裁决之地大区23:00临时停机维护</font></a></td>
+            </tr>
+			<tr height="25" align="left"><!--#9DA1AC-->
+        		<td width="305px">&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">6月20日免费英雄更换公告</font></a></td>
+				<td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+            <tr height="25" align="left">
+       			 <td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">6月19日凌晨1点“雷瑟守备、诺克萨斯”停机</font></a></td>
+           		 <td align="left"><font color="#9DA1AC">06/12</font></td>
+   		    </tr>
+         	<tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">军团大体系统服务暂停通知</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+        	 <tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">教育网大区23:00临时停机维护公告</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+       		 </tr>
+         	<tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">皮城警备大区23:00临时停机维护公告</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+         	<tr height="25" align="left">
+        		<td >&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">比尔吉沃特大区23:00临时停机维护公告</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+   		    </tr>
+</table>
+</div>
+
+<!--论坛-->
+
+<div id="luntandiv" class="nodisplay" style="position:absolute; left:602px; top:523px; width:390px; height:210px; background-color:#2C3242">
+<table height="210px" width="390px">
+<!--21DDAD    shen 151821-->
+			<tr>
+            	<td colspan="2" style="background-color:#151821" align="center"><a href="#"><font color="#21DDAD" size="+1">英格兰与法国你更支持谁？皮肤公仔等着你</font></a></td>
+            </tr>
+			<tr height="25" align="left"><!--#9DA1AC-->
+        		<td width="305px">&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">妩媚性感 LOL足球宝贝软妹子来袭</font></a></td>
+				<td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+            <tr height="25" align="left">
+       			 <td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">德玛西亚世界杯亮相，五大热门阵容</font></a></td>
+           		 <td align="left"><font color="#9DA1AC">06/12</font></td>
+   		    </tr>
+         	<tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">PE、EP荣耀保卫战继续打响，对手能否逆袭？</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+        	 <tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">萌妹子手绘合集 阿里性感到爆啦</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+       		 </tr>
+         	<tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">幸运女生在微笑 大神一起游戏吧！</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+         	<tr height="25" align="left">
+        		<td >&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">敢不敢比一比？神马皮肤让你最得意</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+   		    </tr>
+</table>
+</div>
+
+<!--媒体-->
+
+<div id="meitidiv" class="nodisplay" style="position:absolute; left:602px; top:523px; width:390px; height:210px; background-color:#2C3242">
+<table height="210px" width="390px">
+<!--21DDAD    shen 151821-->
+			<tr>
+            	<td colspan="2" style="background-color:#151821" align="center"><a href="#"><font color="#21DDAD" size="+1">充满坎坷的电竞路 EDG战队背后的故事</font></a></td>
+            </tr>
+			<tr height="25" align="left"><!--#9DA1AC-->
+        		<td width="305px">&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">从剑舞红线笑到Xiaoxiao 中国电竞幕后史</font></a></td>
+				<td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+            <tr height="25" align="left">
+       			 <td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">美测服6.18变动：新版召唤师峡谷露真容</font></a></td>
+           		 <td align="left"><font color="#9DA1AC">06/12</font></td>
+   		    </tr>
+         	<tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">v4.10补丁：豹女蝎子重做 AD装增强</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+        	 <tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">在LOL中运筹帷幄 用智商赢得胜利</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+       		 </tr>
+         	<tr height="25" align="left">
+        		<td>&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">21条真理！献给掉进青铜的朋友梦</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+        	</tr>
+         	<tr height="25" align="left">
+        		<td >&nbsp;&nbsp;<font color="#9DA1AC">[新闻]</font><a href="#"><font color="#FFFFFF">三年苦痛终上白银 专访电1自身青铜小学生</font></a></td>
+                <td align="left"><font color="#9DA1AC">06/12</font></td>
+   		    </tr>
+</table>
+</div>
+
+<div style="position:absolute; left:602px; top:733px; width:370px; height:27px; background-color:#2C3242" align="right"><a href="#" style="color:#FFF; font-size:12px">查看更多</a></div>
+<div style="position:absolute; left:972px; top:733px; width:20px; height:27px; background-color:#2C3242"></div>
+
+<div style="height:40px; width:980px; position:absolute; left:10px; top:760px; background-color:#FFF;"></div>
+
+<!--活动中心 及本周免费英雄-->
+<p></p>
+<p></p>
+
+<div style="background-color:#FFF; position:absolute; width:580px; height:50px; left:10px; top:800px; z-index:0">
+<table height="50px" width="580px">
+	<tr>
+    	<td><a href="#"><img src="../图片/images/mainspr_15.png" /></a><!--活动中心-->
+        </td>
+        <td align="right">
+        	<a href="#">查看更多</a>
+        </td>
+    </tr>
+</table>
+</div><!--顶部-->
+
+<div style="background-color:#FFF; position:absolute; width:20px; height:50px; left:590px; top:800px"></div>
+
+<div style="background-color:#FFF; position:absolute; width:380px; height:50px; left:610px; top:800px;">
+<table width="380px" height="50px">
+	<tr>
+    	<td><a href="#"><img src="../图片/images/mainspr_27.png" /></a></td><!--本周免费英雄-->
+        <td align="right"><a href="#">查看更多</a></td>
+    </tr>
+</table>
+</div><!--顶部-->
+
+<div style="position:absolute; width:380px; height:135px; background-color:#FFF; left:610px; top:850px">
+<table width="380px" height="135px" align="center">
+	<tr height="67px" align="center">
+    	<td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/34_Web_0.jpg); background-size:contain; height:60px; width:60px">
+        	<!--<div align="center" style="height:60x; width:60px; filter: alpha(opacity=70); background-color:#666; color:#FFF; font-size:12px; opacity:0.60; position:absolute; bottom:0px"><br /><font color="#CCCCCC">AAA</font>-->
+          <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">AAA<br />AAA<br />AAA<br />AAA<br />AAA</font></div>
+        </div></td>
+        
+        <td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/51_Web_0.jpg); background-size:contain; height:60px; width:60px">
+       	  <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">BBB<br />BBB<br />BBB<br />BBB<br />BBB</font></div>
+        </div></td>
+        
+        <td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/36_Web_0.jpg); background-size:contain; height:60px; width:60px">
+       	  <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">BBB<br />BBB<br />BBB<br />BBB<br />BBB</font></div>
+        </div></td>
+        
+        <td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/60_Web_0.jpg); background-size:contain; height:60px; width:60px">
+       	  <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">BBB<br />BBB<br />BBB<br />BBB<br />BBB</font></div>
+        </div></td>
+        
+        <td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/38_Web_0.jpg); background-size:contain; height:60px; width:60px">
+       	  <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">BBB<br />BBB<br />BBB<br />BBB<br />BBB</font></div></div></td>
+	</tr>
+    
+    <tr height="67px" align="center">
+    	<td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/117_Web_0.jpg); background-size:contain; height:60px; width:60px">
+       	  <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">BBB<br />BBB<br />BBB<br />BBB<br />BBB</font></div>
+        </div></td>
+        
+        <td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/80_Web_0.jpg); background-size:contain; height:60px; width:60px">
+       	  <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">BBB<br />BBB<br />BBB<br />BBB<br />BBB</font></div>
+        </div></td>
+        
+        <td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/72_Web_0.jpg); background-size:contain; height:60px; width:60px">
+       	  <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">BBB<br />BBB<br />BBB<br />BBB<br />BBB</font></div>
+        </div></td>
+        
+        <td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/44_Web_0.jpg); background-size:contain; height:60px; width:60px">
+       	  <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">BBB<br />BBB<br />BBB<br />BBB<br />BBB</font></div>
+        </div></td>
+        
+        <td><div class="zhoumian" style="background-image:url(../%E5%9B%BE%E7%89%87/images/19_Web_0.jpg); background-size:contain; height:60px; width:60px">
+       	  <div align="center" style="height:60px; width:60px; filter: alpha(opacity=70); background-color:#060; opacity:0.70"><font color="#FFFFFF">BBB<br />BBB<br />BBB<br />BBB<br />BBB</font></div>
+        </div></td>
+	</tr>
+    
+</table>
+</div>
+
+<!--活动中心10px-850px  135-185-->
+<div style="width:580px; height:130px; background-color:#FFF; position:absolute; left:10px; top:850px">
+<table id="eee" align="center" width="580px">
+	<tr>
+    	<td align="left">
+        <div id="gaoxiao" class="mydiv" style="background-image:url(../%E5%9B%BE%E7%89%87/images/1388482548_1436653066_24958_sSmallImgFile.jpg); height:130px; width:178px; position:relative">
+        	<div align="center" style="height:50px; width:178px; filter: alpha(opacity=70); background-color:#666; color:#FFF; font-size:12px; opacity:0.60; position:absolute; bottom:0px"><br /><font color="#CCCCCC">全国高校排行榜<br />已有3424931人关注</font>
+  			</div>
+        </div>
+        </td>
+        
+        <td align="center">
+        <div id="xinyong" class="mydiv" style="background-image:url(../%E5%9B%BE%E7%89%87/images/1388405659_1436653066_10041_sSmallImgFile.jpg); height:130px; width:178px">
+        <div style="height:50px; width:178px; filter: alpha(opacity=70); background-color:#666; color:#FFF; font-size:12px; opacity:0.60; position:absolute; bottom:0px"><br /><font color="#CCCCCC">英雄联盟招行信用卡<br />已有1122053人关注</font>
+        </div>
+        </td>
+        
+      <td align="right">
+      <div id="quanmingxin" class="mydiv" style="background-image:url(../%E5%9B%BE%E7%89%87/images/1396804927_1436653066_580_sSmallImgFile.jpg); height:130px; width:178px">
+      <div align="center" style="height:50px; width:178px; filter: alpha(opacity=70); background-color:#666; color:#FFF; font-size:12px; opacity:0.60; position:absolute; bottom:0px"><br /><font color="#CCCCCC">2014全明星投票<br />已有1324002人关注</font>
+      </div>
+      </td>
+    </tr>
+</table>
+</div>
+
+<!--赛事中心 及 战争学院 和客服专区 -->
+<!--大边框-->
+<div style="background-color:#FFF; position:absolute; width:580px; height:50px; left:10px; top:1000px; z-index:0">
+<table height="50px" width="580px">
+	<tr>
+    	<td><a href="#"><img src="../图片/images/mainspr_22.png" /></a>
+        </td>
+        <td align="right">
+        	<a href="#">查看更多</a>
+        </td>
+    </tr>
+</table>
+</div><!--顶部-->
+
+<div style="background-color:#CCC; position:absolute; width:580px; height:8px; left:10px;top:1050px;">
+</div>
+<div style="background-color:#E6E6E6; position:absolute; width:580px; height:60px; left:10px;top:1058px; z-index:0">
+<table width="580px" height="60px">
+	<tr>
+    	<td align="center"><a href="#"><div id="zhiyeliansai" class="zhiyeliansai"><font color="#666666" >职业联赛</font></div><a></td>
+		<td align="center"><a href="#"><div id="jiajiliansai" class="jiajiliansai"><font color="#666666" >甲级联赛</font></div></a></td>
+		<td align="center"><a href="#"><div id="demaxiya"><font color="#666666" >德玛西亚杯</font></div></a></td>
+		<td align="center"><a href="#"><div id="gaoxiaoliansai"><font color="#666666" >高校联赛</font></div></a></td>
+        <td align="center"><a href="#"><div id="chengshizhengba"><font color="#666666" >城市争霸杯</font></div></a></td>
+        <td align="center"><a href="#"><div id="QQwangba"><font color="#666666" >QQ网吧联赛</font></div></a></td>
+    </tr>
+</table>
+</div>
+
+<div id="zhiyeliansaidiv" class="zhiyeliansai" style="background-color:#FFF; border:2px solid #CCC; position:absolute; width:576px; height:240px; left:10px;top:1118px; z-index:0">
+<table width="576px" height="240px">
+	<tr>
+		<td width="160" rowspan="6">
+			<p><a href="#"><img src="images/1393476941256428541.jpg" /></a></p>
+			<a href="#"><div style="position:relative"><img src="images/mainspr_33.png" /><div style="position:absolute; z-index:2; left:55px; top:10px;" >进入赛事</div></div></a>
+		</td>
+		<td width="314"><p><a href="#"><font size="+1" color="#408000">2014英雄联盟职业联赛夏季赛</font><br />时间：2014-6-14-2014-8-24<br />地点：上海同济大学</a></p></td>
+		<td align="right" width="72"></td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">第二届全国高校联赛落幕 福建闽江学院卫冕冠军</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#"> LOL高校联赛总决赛 闽江2比0成功卫冕</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">高校总决赛结束 福建闽江完美优势成功卫冕</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">LOL高校联赛总决赛 福建闽江先下一城</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">LOL高校联赛粉丝齐聚草莓备受女玩家追捧</a></td>
+		<td align="center">06/04</td>
+	</tr>
+</table>
+
+<div style="background-color:#FFF; position:absolute; width:100px; height:50px; left:465px; top:10px; z-index:2">
+<img src="../图片/images/mainspr_02.png" />
+<div style="position:absolute; width:100px; height:50px; left:10px; top:5px; z-index:3; ">
+<table width="100px" height="50px" align="center">
+<tr align="center">
+	<td><a href="#"><font size="+1"><font color="#FFFFFF">375110</font><br />关注</font></a></td>
+</tr>
+</table>
+</div>
+</div>  
+                                    
+</div>
+
+<!--鹅-->
+<div id="QQwangbadiv" class="nodisplay" style="background-color:#FFF; border:2px solid #CCC; position:absolute; width:576px; height:240px; left:10px;top:1118px; z-index:0">
+  <table width="576px" height="240px">
+	<tr>
+		<td width="160" rowspan="6">
+			<p><a href="#"><img src="images/1393476941256428541.jpg" /></a></p>
+			<a href="#"><div style="position:relative"><img src="images/mainspr_33.png" /><div style="position:absolute; z-index:2; left:55px; top:10px;" >我里个擦</div></div></a>
+		</td>
+		<td width="314"><p><a href="#"><font size="+1" color="#408000">鹅</font><br />时间：2014-6-14-2014-8-24<br />作者：骆宾王</a></p></td>
+		<td align="right" width="72"></td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">鹅鹅鹅</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">曲项向天歌</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">白毛浮绿水</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">红掌拨清波</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">完结</a></td>
+		<td align="center">06/04</td>
+	</tr>
+</table>
+<div style="background-color:#FFF; position:absolute; width:100px; height:50px; left:465px; top:10px; z-index:2">
+<img src="../图片/images/mainspr_02.png" />
+<div style="position:absolute; width:100px; height:50px; left:10px; top:5px; z-index:3; ">
+<table width="100px" height="50px" align="center">
+<tr align="center">
+	<td><a href="#"><font size="+1"><font color="#FFFFFF">555555</font><br />关注</font></a></td>
+</tr>
+</table>
+</div>
+</div>  
+</div>
+
+<!--一二三四五-->
+<div id="chengshizhengbadiv" class="nodisplay" style="background-color:#FFF; border:2px solid #CCC; position:absolute; width:576px; height:240px; left:10px;top:1118px; z-index:0">
+  <table width="576px" height="240px">
+	<tr>
+		<td width="160" rowspan="6">
+			<p><a href="#"><img src="images/1393476941256428541.jpg" /></a></p>
+			<a href="#"><div style="position:relative"><img src="images/mainspr_33.png" /><div style="position:absolute; z-index:2; left:55px; top:10px;" >还有这么多</div></div></a>
+		</td>
+		<td width="314"><p><a href="#"><font size="+1" color="#408000">一二三四五</font><br />时间：2014-6-14-2014-8-24<br />作者：佚名</a></p></td>
+		<td align="right" width="72"></td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">一二三四五</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">上山打老虎</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">老虎不在家</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">打只小松鼠</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">完结</a></td>
+		<td align="center">06/04</td>
+	</tr>
+</table>
+<div style="background-color:#FFF; position:absolute; width:100px; height:50px; left:465px; top:10px; z-index:2">
+<img src="../图片/images/mainspr_02.png" />
+<div style="position:absolute; width:100px; height:50px; left:10px; top:5px; z-index:3; ">
+<table width="100px" height="50px" align="center">
+<tr align="center">
+	<td><a href="#"><font size="+1"><font color="#FFFFFF">444444</font><br />关注</font></a></td>
+</tr>
+</table>
+</div>
+</div>  
+</div>
+
+
+<!--静夜思-->
+<div id="gaoxiaoliansaidiv" class="nodisplay" style="background-color:#FFF; border:2px solid #CCC; position:absolute; width:576px; height:240px; left:10px;top:1118px; z-index:0">
+  <table width="576px" height="240px">
+	<tr>
+		<td width="160" rowspan="6">
+			<p><a href="#"><img src="images/1393476941256428541.jpg" /></a></p>
+			<a href="#"><div style="position:relative"><img src="images/mainspr_33.png" /><div style="position:absolute; z-index:2; left:55px; top:10px;" >其实我是拒绝的</div></div></a>
+		</td>
+		<td width="314"><p><a href="#"><font size="+1" color="#408000">静夜思</font><br />时间：2014-6-14-2014-8-24<br />作者：李白</a></p></td>
+		<td align="right" width="72"></td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">床前明月光</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">疑是地上霜</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">举头望明月</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">低头思故乡</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">完结</a></td>
+		<td align="center">06/04</td>
+	</tr>
+</table>
+
+<div style="background-color:#FFF; position:absolute; width:100px; height:50px; left:465px; top:10px; z-index:2">
+<img src="../图片/images/mainspr_02.png" />
+<div style="position:absolute; width:100px; height:50px; left:10px; top:5px; z-index:3; ">
+<table width="100px" height="50px" align="center">
+<tr align="center">
+	<td><a href="#"><font size="+1"><font color="#FFFFFF">333333</font><br />关注</font></a></td>
+</tr>
+</table>
+</div>
+</div>  
+
+</div>
+
+
+<!--春晓-->
+<div id="jiajiliansaidiv" class="nodisplay" style="background-color:#FFF; border:2px solid #CCC; position:absolute; width:576px; height:240px; left:10px;top:1118px; z-index:0">
+  <table width="576px" height="240px">
+	<tr>
+		<td width="160" rowspan="6">
+			<p><a href="#"><img src="images/1393476941256428541.jpg" /></a></p>
+			<a href="#"><div style="position:relative"><img src="images/mainspr_33.png" /><div style="position:absolute; z-index:2; left:55px; top:10px;" >哎哎哎</div></div></a>
+		</td>
+		<td width="314"><p><a href="#"><font size="+1" color="#408000">春晓</font><br />时间：2014-6-14-2014-8-24<br />作者：孟浩然</a></p></td>
+		<td align="right" width="72"></td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">春眠不觉晓</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">处处闻啼鸟</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">夜来风雨声</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">花落知多少</a></td>
+		<td align="center">06/04</td>
+	</tr>
+	<tr height="25">
+		<td><a href="#">完结</a></td>
+		<td align="center">06/04</td>
+	</tr>
+</table>
+
+<div style="background-color:#FFF; position:absolute; width:100px; height:50px; left:465px; top:10px; z-index:2">
+<img src="../图片/images/mainspr_02.png" />
+<div style="position:absolute; width:100px; height:50px; left:10px; top:5px; z-index:3; ">
+<table width="100px" height="50px" align="center">
+<tr align="center">
+	<td><a href="#"><font size="+1"><font color="#FFFFFF">222222</font><br />关注</font></a></td>
+</tr>
+</table>
+</div>
+</div>  
+
+</div>
+
+
+<!--山村咏怀-->
+<div id="demaxiyadiv" class="nodisplay" style="background-color:#FFF; border:2px solid #CCC; position:absolute; width:576px; height:240px; left:10px;top:1118px; z-index:0">
+
+<table width="576px" height="240px">
+
+	<tr>
+
+		<td width="160" rowspan="6">
+
+			<p><a href="#"><img src="images/1393476941256428541.jpg" /></a></p>
+
+			<a href="#"><div style="position:relative"><img src="images/mainspr_33.png" /><div style="position:absolute; z-index:2; left:55px; top:10px;" >呵呵嗒</div></div></a>
+
+		</td>
+
+		<td width="314"><p><a href="#"><font size="+1" color="#408000">山村咏怀</font><br />时间：2014-6-14-2014-8-24<br />作者：邵康节</a></p></td>
+
+		<td align="right" width="72"></td>
+
+	</tr>
+
+	<tr height="25">
+
+		<td><a href="#">一去二三里</a></td>
+
+		<td align="center">06/04</td>
+
+	</tr>
+
+	<tr height="25">
+
+		<td><a href="#">烟村四五家</a></td>
+
+		<td align="center">06/04</td>
+
+	</tr>
+
+	<tr height="25">
+
+		<td><a href="#">亭台六七座</a></td>
+
+		<td align="center">06/04</td>
+
+	</tr>
+
+	<tr height="25">
+
+		<td><a href="#">八九十枝花</a></td>
+
+		<td align="center">06/04</td>
+
+	</tr>
+
+	<tr height="25">
+
+		<td><a href="#">完结</a></td>
+
+		<td align="center">06/04</td>
+
+	</tr>
+
+</table>
+
+ <div style="background-color:#FFF; position:absolute; width:100px; height:50px; left:465px; top:10px; z-index:2">
+<img src="../图片/images/mainspr_02.png" />
+<div style="position:absolute; width:100px; height:50px; left:10px; top:5px; z-index:3; ">
+<table width="100px" height="50px" align="center">
+<tr align="center">
+	<td><a href="#"><font size="+1"><font color="#FFFFFF">111111</font><br />关注</font></a></td>
+</tr>
+</table>
+</div>
+</div>                                     
+
+</div>
+
+
+<!--战争学院-->
+<div style="background-color:#FFF; position:absolute; width:380px; height:50px; left:610px; top:1000px;">
+<table width="380px" height="50px">
+	<tr>
+    	<td><a href="#"><img src="../图片/images/mainspr_22-10.png"/></a></td>
+        <td align="right"><a href="#">查看更多</a></td>
+    </tr>
+</table>
+</div><!--顶部-->
+
+<div style="background-color:#CCC; position:absolute; width:380px; height:8px; left:610px;top:1050px;">
+</div>
+<div style="background-color:#E6E6E6; position:absolute; width:380px; height:60px; left:610px;top:1058px">
+<table width="380px" height="60px">
+	<tr align="center">
+    	<td><a href="#"><div id="zhanzhengzhiye"><font color="666666">职业联赛</font></div></a></td>
+    	<td><a href="#"><div id="zhanzhengjiaji"><font color="666666">甲级联赛</font></div></a></td>
+    </tr>
+</table>
+</div>
+
+<!--战争学院甲级联赛-->
+<div id="zhanzhengjiajidiv" class="nodisplay" style="background-color:#FFF; position:absolute; width:376px; height:300px; left:610px;top:1118px;border:2px solid #CCC;">
+<table width="376px" align="center">
+	<tr align="center">
+    	<td><a href="#"><img src="../图片/images/1401068281691329928.jpg" /></a></td>
+		<td><a href="#"><img src="../图片/images/1401068262290195172.jpg" /></a></td>
+    </tr>
+    
+    <tr>
+    	<td colspan="2"> 
+        <table align="center">
+        <tr>
+        <td>
+        <input type="radio" id="jingdian" value="经典" name="xuanze" checked="checked"/>经典模式
+            </td>
+                        <td width="113">
+						<input type="radio" id="jididaluandou" value="极地"  name="xuanze"/>极地大乱斗
+                        </td>
+                        <td width="151" align="right">
+						<select  onchange="other1.value=this.value;" > 
+							<option value=a>本周免费英雄</option>
+							<option value=b>第二</option> 
+						</select>	</td>
+        </tr>
+        </table>
+    </tr>
+
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;皮城执法官打野入门心得</a></td>
+    </tr>
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;妹子上分英雄谱 打野蔚大型进阶攻</a></td>
+    </tr>
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4s皮城执法官打野入门心得 先打一</a></td>
+    </tr>
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;娜美4s辅助攻略 我任然能够听见大</a></td>
+    </tr>        
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;罗兰大陆的灵魂收割者：锤石上</a></td>
+    </tr>
+    
+</table>
+</div>
+
+
+<div id="zhanzhengzhiyediv" style="background-color:#FFF; position:absolute; width:376px; height:300px; left:610px;top:1118px;border:2px solid #CCC;">
+<table width="376px" align="center">
+	<tr align="center">
+    	<td><a href="#"><img src="../图片/images/1401068262290195172.jpg" /></a></td>
+		<td><a href="#"><img src="../图片/images/1401068281691329928.jpg" /></a></td>
+    </tr>
+    
+    <tr>
+    	<td colspan="2"> 
+        <table align="center">
+        <tr>
+        <td>
+        <input type="radio" id="jingdian" value="经典" name="xuanze" checked="checked"/>经典模式
+            </td>
+                        <td width="113">
+						<input type="radio" id="jididaluandou" value="极地"  name="xuanze"/>极地大乱斗
+                        </td>
+                        <td width="151" align="right">
+						<select  onchange="other1.value=this.value;" > 
+							<option value=a>本周免费英雄</option>
+							<option value=b>第二</option> 
+						</select>	</td>
+        </tr>
+        </table>
+    </tr>
+    
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;罗兰大陆的灵魂收割者：锤石上</a></td>
+    </tr>
+    
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;娜美4s辅助攻略 我任然能够听见大</a></td>
+    </tr>
+    
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4s皮城执法官打野入门心得 先打一</a></td>
+    </tr>
+    
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;妹子上分英雄谱 打野蔚大型进阶攻</a></td>
+    </tr>
+    
+    <tr height="30px">
+    	<td colspan="2"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;皮城执法官打野入门心得</a></td>
+    </tr>
+    
+</table>
+</div>
+
+<div style="background-color:#FFF; position:absolute; width:580px; height:50px; left:10px; top:1380px; z-index:0">
+<table height="50px" width="580px">
+	<tr>
+    	<td><a href="#"><img src="../图片/images/mainspr_29.png" /></a>
+        </td>
+        <td align="right">
+        	<a href="#">Q游助手&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;QQ在线客服</a>
+        </td>
+    </tr>
+</table>
+</div><!--顶部-->
+<div style="background-color:#FFF; border:2px solid #CCC; position:absolute; width:578px; height:50px; left:10px;top:1430px; z-index:0">
+<table width="580px" height="50px">
+	<tr align="center">
+    	<td width="80px"><a href="#">常见问题</a></td>
+		<td width="180px"><a href="#">自助服务</a></td>
+    	<td><a href="#">游戏相关</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+		<td><a href="#">账户相关</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+    	<td><a href="#">电脑及其他问题</a></td>
+
+    </tr>
+</table>
+</div>
+
+<div style="background-color:#FFF; position:absolute; width:584px; height:180px; left:10px;top:1490px; z-index:0">
+<table width="584px" height="180px">
+	<tr>
+    	<td><a href="#">弹出“Abobe flash player设置”提示无法</a></td>
+    	<td><a href="#">英雄联盟有哪些情况会被封号惩罚</a></td>
+    </tr>
+   	<tr>
+    	<td><a href="#">英雄联盟排位赛/晋级赛规则</a></td>
+    	<td><a href="#">为什么英雄联盟选完区后客户端闪退</a></td>
+    </tr>
+    	<tr>
+    	<td><a href="#">英雄联盟充值充错大区了怎么办？</a></td>
+    	<td><a href="#">英雄联盟登录提示未知错误，怎么办</a></td>
+    </tr>
+    	<tr>
+    	<td><a href="#">英雄联盟（LOL）游戏崩溃如何处理？</a></td>
+    	<td><a href="#">为什么英雄联盟登录会出现乱码？</a></td>
+    </tr>
+    	<tr>
+    	<td><a href="#">英雄联盟对电脑配置有什么要求</a></td>
+    	<td><a href="#">为什么登录英雄联盟提示证书过期</a></td>
+</table>
+</div>
+
+<div style="background-color:#FFF; position:absolute; width:376px; height:64px; left:610px;top:1450px;">
+<a href="#"><img src="../图片/images/1388641716767393855.jpg" width="376" height="64"/></a>
+</div> 
+<div style="background-color:#FFF; position:absolute; width:376px; height:64px; left:610px;top:1550px;">
+<a href="#"><img src="../图片/images/1388641599893353099.jpg" width="376" height="64"/></a>
+</div> 
+
+<!-- 版权声明-->
+<div style="background-color:#999; position:absolute; width:980px; height:2px; left:10px; top:1700px">
+</div>
+
+<div style="background-color:#FFF; position:absolute; width:980px; height:100px; left:10px; top:1720px">
+<table width="980px" height="100px" align="center">
+	<tr align="center">
+    	<td><a href="#">腾讯互动娱乐</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">服务条款 </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">广告服务 </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">腾讯游戏招聘 </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">腾讯游戏客服</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">游戏活动</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">游戏地图</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">商务合作</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">腾讯网</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">网站导航</a></td>
+    </tr>
+    <tr align="center">
+    	<td><font size="-2">COPYRIGHT&copy;1998 - 2014 TENCENT.&nbsp;&nbsp;ALL RIGHTS RESERVED.&nbsp;&nbsp;腾讯公司版权所有</font></td>
+    </tr>
+    <tr align="center">
+    	<td>&copy;2012 RIOT GAMES,&nbsp;Inc.&nbsp;&nbsp;ALL RIGHTS RESERVED&nbsp;&nbsp;文网进字[2011] 004号 ISBN 978-7-89989－145-2｜粤网文[2011]0483-070号</td>
+    </tr>
+</table>
+</div>
+<center>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>Bar Chart Display</title>
+  <style type="text/css">
+  body
+ {
+	background-color:#fff;
+	color:#000;
+	font-size:12px;
+ }
+
+img {
+	height: 15px;
+	width:0px;	
+	vertical-align: bottom;
+}
+
+</style>
+ <script type="text/javascript">
+
+     var radioButtons = document.getElementsByName("choose");
+     function chgChart() {
+         if (getButton("choose") == "A") {
+             document.getElementById("1").style.width = nextPos("1") + "px";
+          
+         }
+         else {
+             document.getElementById("2").style.width = nextPos("2") + "px";
+            
+         }
+     }
+     function getButton(buttonSet) {
+         for (var i = 0; i < radioButtons.length; i++) {
+             if (radioButtons[i].name == buttonSet && radioButtons[i].checked) {
+                 return radioButtons[i].value;
+             }
+         }
+         return -1;
+     }
+     function nextPos(elem) {
+         return document.getElementById(elem).offsetWidth + 1;
+     }             
+   </script>  
+</head>
+<body>
+<h1>Choose a chart</h1>
+<div id="chartType">
+     <input type="radio" name="choose" value="A" />A
+     <input type="radio" name="choose" value="B" />B
+     <input id="btn" type="button" name="sure" value="submit" onclick = "chgChart()"/>
+</div>
+<div id="chartArea">
+     <table>
+       <tr>
+         <td>A:</td>
+         <td><img id="1" src="image/lilRed.gif"  /></td>
+       </tr>
+       <tr>
+         <td>B:</td>
+         <td><img id="2" src="image/lilRed.gif" /></td>
+       </tr>
+     </table>
+</div>   
+</body>
+</html>

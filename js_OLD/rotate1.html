@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>热门电影</title>
+    <style type="text/css">
+   td{background:#C5C1AA
+         }
+   </style>
+   <script type="text/javascript">
+       window.onload = rotate;
+       var flag = 0;
+       var thisAd = 0;
+       var adImages = new Array("image/onelife.jpg", "image/houhui.jpg", "image/xiaoshidai.jpg", "image/gesila.jpg", "image/bian.jpg");
+       function rotate() {
+           if (thisAd == adImages.length) {
+               thisAd = 0;
+           }
+           document.getElementById("adBanner").src = adImages[thisAd];
+           for (var m = 1; m <= 5; m++) {
+               if (m == thisAd + 1) {
+                   document.getElementById(m).style.background = "red";
+               }
+               else {
+                   document.getElementById(m).style.background = "#C5C1AA";
+               }
+           }
+           thisAd++;
+           timed=setTimeout(rotate,3*1000);
+       }
+       function duiying(i) {
+           flag = 0;
+           document.getElementById(i).style.background = "red";
+       }
+       function out(j) {
+           if (flag == 0) {
+               document.getElementById(j).style.background = "#C5C1AA";
+           }
+           else {
+               rotate();
+           }
+       }
+       function xuanzhong(k) {
+           for (var m = 1; m <= 5; m++) {
+               if (m == k) {
+                   document.getElementById(m).style.background = "red";
+               }
+               else {
+                   document.getElementById(m).style.background = "#C5C1AA";
+               }
+           }
+          clearTimeout(timed);
+          flag = 1;
+          thisAd = k-1;
+          document.getElementById("adBanner").src = adImages[k - 1];
+       }                   
+   </script>  
+  </head>
+  <body>
+   <h1 align="center">热门电影</h1>
+     <div id="showing" align="center">
+        <img id="adBanner" src="image/onelife.jpg" />
+        <table id="banners" width=110 height=20>
+          <tr>
+           <td align="center" id="1" onmouseover="duiying(1)" onmouseout="out(1)" onclick="xuanzhong(1)">1</td>
+           <td align="center" id="2" onmouseover="duiying(2)" onmouseout="out(2)" onclick="xuanzhong(2)">2</td>
+           <td align="center" id="3" onmouseover="duiying(3)" onmouseout="out(3)" onclick="xuanzhong(3)">3</td>
+           <td align="center" id="4" onmouseover="duiying(4)" onmouseout="out(4)" onclick="xuanzhong(4)">4</td>
+           <td align="center" id="5" onmouseover="duiying(5)" onmouseout="out(5)" onclick="xuanzhong(5)">5</td>
+          </tr>
+        </table>
+      </div>
+  </body>
+ </html>

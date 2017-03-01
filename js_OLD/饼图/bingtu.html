@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>Pie Chart</title>
+  <script src="bingtu.js"></script> 	  
+  <style type="text/css">
+
+body    {
+	font-family: 楷体;
+	font-size: 12px;
+	line-height: 16px;
+	margin: 20px 40px;
+}
+
+table.pieChart {
+	border-collapse: collapse;
+	width: 185px;
+	
+}
+
+table.pieChart th, table.pieChart td {
+	padding: 5px 8px;
+	border: 2px solid #fff;
+	height: 35px;
+}
+
+table.pieChart th {
+	text-align: left;
+	background: #efefef;
+}
+
+div
+{
+    float:left;
+}
+
+h1
+{
+    padding-left:135px;
+}
+
+</style>
+</head>
+<body>
+  <h1>大学生月消费比例图</h1>
+  <br/><br/>
+  <div align="center">
+  <table class="pieChart">
+    <tr><th bgcolor="#efefef">消费项目  </th> <th bgcolor="#efefef">比例 </th></tr>
+    <tr><td bgcolor="#e8d47e">饮食      </td> <td bgcolor="#e8d47e">70.0%</td></tr>
+    <tr><td bgcolor="#fba598">日常用品  </td> <td bgcolor="#fba598">5.0% </td></tr>
+    <tr><td bgcolor="#ea84c3">通讯      </td> <td bgcolor="#ea84c3">7.5% </td></tr>
+    <tr><td bgcolor="#be87ec">学习用品  </td> <td bgcolor="#be87ec">12.5%</td></tr>
+    <tr><td bgcolor="#94a9fa">服饰      </td> <td bgcolor="#94a9fa">2.0% </td></tr>
+    <tr><td bgcolor="#81d7e4">人际交往  </td> <td bgcolor="#81d7e4">2.0% </td></tr>
+    <tr><td bgcolor="#92f8b9">其他      </td> <td bgcolor="#92f8b9">1.0% </td></tr>
+  </table>
+  </div>
+  <div align="center">
+    <canvas id="circle" width="400" height="300">您的浏览器暂不支持Canvas</canvas>
+  </div>
+</body>
+</html>

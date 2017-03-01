@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".btn1").click(function(){
+   //$("p").animate({left:"100px"},2000);
+    //$("p").animate({left:"+=100px"},2000);
+	//$("p").animate({left:"100px", height:"500px"},2000);
+	//$("p").animate({left:"100px"},2000).animate({height:"500px"},2000);
+	$("p").animate({left:"300px", height:"200px",opacity:"1"},1000).animat({top:"300px", 
+                 //width:"300px"},1000).fadeOut("slow");
+	//$("p").animate({left:"300px", height:"200px",opacity:"1"},1000).animate({top:"300px", 
+                // width:"300px"},1000).css("border", "5px solid blue");
+	/*$("p").animate({left:"300px", height:"200px",opacity:"1"},1000).animate({top:"300px", 
+                 width:"300px"},1000,function(){
+				     $(this).css("border", "5px solid blue");
+				 });
+	
+	$("p").hover(function(){
+	    $(this).stop()
+		       .animate({height:"300px"},2000)
+			   .animate({width:"200px"},3000);
+	},function(){
+	    $(this).stop()
+		       .animate({height:"30px"},2000)
+			   .animate({width:"20px"},3000);
+	});*/
+  });
+  $(".btn2").click(function(){
+  $("p").animate({left:""});
+  });
+});
+</script>
+</head>
+<body>
+<button class="btn1">Animate</button>
+<button class="btn2">Reset</button>
+<div style="position:relative">
+<p style="background-color:yellow;width:100px;position:absolute;opacity:0.5;">This is a paragraph.</p>
+</div>
+</body>
+</html>

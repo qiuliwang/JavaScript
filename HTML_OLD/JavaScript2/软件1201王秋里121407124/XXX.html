@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>级联显示</TITLE>
+<SCRIPT type="text/javascript">
+function showType(party){
+	var arttype = new Array();
+	arttype[0] = ["人类","暗夜精灵","矮人","侏儒"];
+	arttype[1] = ["兽人","牛头人","亡灵","巨魔"];
+	if(party!=0){
+		document.myform.artTarget.options.length=0;
+		for(var i in arttype[party-1]){
+			document.myform.artTarget.options.add(new Option(arttype[party-1][i],parseInt(i)+1))
+		}
+		document.myform.artTarget.options.selectedIndex=0;
+		showPic(1)
+	}
+}
+function showPic(num){
+	var type=document.myform.artParty.value;
+	if(type==1){
+		for(var i=1;i<5;i++){
+			if(num==i){
+				document.getElementById("lm"+i).style.display="block";
+			}else{
+				  document.getElementById("lm"+i).style.display="none";
+			}
+			document.getElementById("bl"+i).style.display="none";
+		}
+	}else if(type==2){
+		for(var i=1;i<5;i++){
+			if(num==i){
+				document.getElementById("bl"+i).style.display="block";
+			}else{
+				document.getElementById("bl"+i).style.display="none";
+			}
+			document.getElementById("lm"+i).style.display="none";
+		}
+	}
+}
+</SCRIPT>
+<STYLE type="text/css">
+td{font-size:14px; font-family:"宋体"; font-weight:bold}
+</STYLE>
+</HEAD>
+
+<BODY>
+<FORM action="" method="post" name="myform">
+<TABLE width="666" cellpadding="0" cellspacing="0" background="../images/bg.jpg" align="center">
+  <TR>
+    <TD  height="70" align="center"><H3>魔兽世界八大种族(图)</H3></TD>
+  </TR>
+  <TR>
+  <TD align="center">阵营选择
+  	<SELECT name="artParty" onChange="showType(this.selectedIndex)" style="width:140px">
+	  <OPTION value="">--请选择你的阵营--</OPTION>
+	  <OPTION value="1">联盟</OPTION>
+	  <OPTION value="2">部落</OPTION>
+	</SELECT>
+  </TD>
+  </TR>
+  <TR>
+    <TD height="44" align="center">角色选择
+	<SELECT name="artTarget" onChange="showPic(this.value)" style="width:140px">
+	  <OPTION value="">--请选择一个种族--</OPTION>
+	</SELECT>
+	</TD>
+  </TR>
+  <TR>
+    <TD align="center" height="234">
+		<DIV id="lm1" style="display:none"><IMG src="../images/humans-small.jpg"></DIV>
+	    <DIV id="lm4" style="display:none"><IMG src="../images/gnomes-small.jpg"></DIV>
+	    <DIV id="lm3" style="display:none"><IMG src="../images/dwarves-small.jpg"></DIV>
+	    <DIV id="lm2" style="display:none"><IMG src="../images/nightelves-small.jpg"></DIV>
+	    <DIV id="bl1" style="display:none"><IMG src="../images/orcs-small.jpg"></DIV>
+	    <DIV id="bl2" style="display:none"><IMG src="../images/tauren-small.jpg"></DIV>
+		<DIV id="bl3" style="display:none"><IMG src="../images/undead-small.jpg"></DIV>
+		<DIV id="bl4" style="display:none"><IMG src="../images/trolls-small.jpg"></DIV></TD>
+  </TR>
+</TABLE>
+
+</FORM>
+</BODY>
+</HTML>

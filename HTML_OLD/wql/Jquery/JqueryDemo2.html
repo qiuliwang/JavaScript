@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="Script/jquery-1.6.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		$("a").mouseover(function(){
+				if($(this).html()=="论坛")
+				{
+					$("div").html("你选择了论坛，进入论坛讨论！");
+				}
+				else
+				{
+					$("div").html("你选择了汇总，进入汇总操作！");
+					}
+			});
+		
+		});
+</script>
+</head>
+
+<body>
+<a href="#" >论坛</a>|<a href="#" >汇总</a>
+<div style="width:200px; height:100px;"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+<script>
+	//使用 循环打印  1年 ~ 当前年份中有多少个闰年！  
+	//打印每一个闰年和最后打印一共多少个。
+	var count=0;
+	for(var year=1;year<=2015;year++)
+	{
+		if((year%4==0&&year%100!=0)||year%400==0)
+		{
+			document.writeln(year);
+			count++;
+		}
+	}
+	document.write("一共"+count+"个闰年");
+</script>
+<body>
+</body>
+</html>

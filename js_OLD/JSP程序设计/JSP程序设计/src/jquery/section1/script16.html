@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>样式操作</title>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnadd").click(function () {
+                $("#divhello").addClass("class2");
+            });
+            $("#btnremove").click(function () {
+                $("#divhello").removeClass("class2");
+            });
+            $("#btnday").click(function () {
+                $(document.body).toggleClass("night");
+            });
+        });
+    </script>
+    <style type="text/css">
+        .class1{background:green;}
+        .class2{font-size:20px;}
+        .night{background:black;}
+    </style>
+</head>
+<body>
+<div id="divhello" class="class1">你好，cj</div>
+<input type="button" id="btnadd" value="添加样式" />
+<input type="button" id="btnremove" value="移除样式" />
+<input type="button" id="btnday" value="开关灯" />
+</body></html>

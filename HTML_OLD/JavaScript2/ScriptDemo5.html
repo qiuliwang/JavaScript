@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+	var arr=new Array("江苏省","浙江省","湖北省","湖南省","河北省","福建省");
+	var arrJZ=new Array("无锡","苏州","常州","昆山","扬州");
+	var arrFJ=new Array("广州","佛山","福建");
+	function AddSF()
+	{
+		var sel1=document.getElementById("selSF");
+		for(var i=0;i<arr.length;i++)
+		{
+			sel1.options.add(new Option(arr[i],arr[i]));
+		}
+		changes();
+	}
+	function changes()
+	{
+		
+		//获取省份的控件，做判断
+		var sel=document.getElementById("selSF");
+		var city=document.getElementById("selCity");
+		city.length=0;
+		if(sel.value=="江苏省")
+		{
+			for(var i=0;i<arrJZ.length;i++)
+			{
+			city.options.add(new Option(arrJZ[i],arrJZ[i]));
+			}
+		}else if(sel.value=="福建省")
+		{
+			for(var i=0;i<arrFJ.length;i++)
+			{
+			city.options.add(new Option(arrFJ[i],arrFJ[i]));
+			}
+		}
+		
+		
+	}
+	
+	function changeImg()
+	{
+		var city=document.getElementById("selCity");
+		if(city.value=="无锡")
+		{
+			var img=document.getElementsByName("img");
+			img[0].src="images/gnomes-small.jpg";
+			}
+			else if(city.value=="苏州")
+		{
+			var img=document.getElementsByName("img");
+			img[0].src="images/tauren-small.jpg";
+			}
+			else if(city.value=="常州")
+		{
+			var img=document.getElementsByName("img");
+			img[0].src="images/trolls-small.jpg";
+			}
+	}
+	window.onload=AddSF;
+	
+</script>
+</head>
+
+<body>
+<select id="selSF" onchange="changes()">
+	
+</select> 
+<select id="selCity" onchange="changeImg()">
+</select>
+
+<img name="img" src="" />
+</body>
+</html>

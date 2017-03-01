@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>样式操作</title>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+           
+		   $("#btnHide").click(function(){
+		       $("#divhello").hide();
+		     // $("#divhello").fadeOut();
+			 //$("#divhello").slideUp();
+		   });
+		   $("#btnShow").click(function(){
+		       $("#divhello").show("slow");
+			  //$("#divhello").fadeIn();
+			 // $("#divhello").slideDown();
+		   });
+        });
+	
+		
+    </script>
+    <style type="text/css">
+        .class1{background:red; width:200px; height:100px; text-align:center;}
+        .class2{font-size:20px; width:200px; height:100px; background:yellow; display:inline; margin:0 auto; }
+        .night{background:black;}
+    </style>
+</head>
+<body>
+ <div id="divhello" class="class1">  
+    信息学院 
+ </div>
+ <input type="button" id="btnHide" value="隐藏"/>
+ <input type="button" id="btnShow" value="显示"/>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>样式操作</title>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#divhello").hover(function(){
+			    $(this).next().show();
+			},function(){
+			    $(this).next().hide();
+		    });
+	
+        });
+	
+		
+    </script>
+    <style type="text/css">
+        .class1{background:red; width:200px; height:100px;}
+        .class2{font-size:20px; width:200px; height:100px; background:yellow;}
+        .night{background:black;}
+    </style>
+</head>
+<body>
+<div id="divhello" class="class1">你好，cj</div>
+<p> 鼠标悬停：你好，显示/隐藏</p>
+
+</body></html>

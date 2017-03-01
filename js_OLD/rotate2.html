@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>最新电影</title>
+    <style type="text/css">
+   img
+   {
+       height: 100px;
+         }
+    td
+    {
+        font-family:楷体
+    }
+    .pgchange
+    {
+        border-width:4px;
+        border-color:#FFFF00;
+        border-style:solid;
+    }
+   </style>
+   <script type="text/javascript">
+       var thatAd = 4;
+       var thisAd = 0;
+       var adImages = new Array("image/onelife.jpg", "image/houhui.jpg", "image/usa.jpg", "image/tiancai.jpg", "image/xiaoshidai.jpg", "image/bian.jpg",
+                                "image/classmate.jpg", "image/gesila.jpg", "image/fenshou.jpg", "image/cuimian.jpg");
+       var adText = new Array("一生一世", "后会无期", "美国队长2", "天才眼镜狗", "小时代3", "变形金刚4", "同桌的你", "哥斯拉", "分手大师", "催眠大师");
+       function leftRotate() {
+           if (thisAd == 0) {
+               thisAd = 9;
+           }
+           else {
+               thisAd = thisAd - 1;
+           }
+           for(var m=4;m>0;m--){
+               var lid = parseInt(m) + 1;
+               var img = "Img" + m;
+               var lim = "Img" + lid;
+               var lit = "Td" + m;
+               var index = "Td" + lid;
+               document.getElementById(lim).src = document.getElementById(img).src;
+               document.getElementById(index).innerHTML = document.getElementById(lit).innerHTML;
+           }
+           document.getElementById("Img1").src = adImages[thisAd];
+           document.getElementById("Td1").innerHTML = adText[thisAd];
+           thatAd = (thisAd + 4) % 10;
+       }
+       function rightRotate() {
+           if (thatAd == 9) {
+               thatAd = 0;
+           }
+           else {
+               thatAd = thatAd + 1;
+           }
+           for (var m = 1; m <=4; m++) {
+               var lid = parseInt(m) + 1;
+               var img = "Img" + m;
+               var lim = "Img" + lid;
+               var lit = "Td" + m;
+               var index = "Td" + lid;
+               document.getElementById(img).src = document.getElementById(lim).src;
+               document.getElementById(lit).innerHTML = document.getElementById(index).innerHTML;
+           }
+           document.getElementById("Img5").src = adImages[thatAd];
+           document.getElementById("Td5").innerHTML = adText[thatAd];
+           thisAd = (thatAd + 6)%10;
+       }
+       function duiying(v) {
+           var gd = "Img" + v;
+           document.getElementById(gd).className = "pgchange";
+      }
+      function pgout(e) {
+          var pd = "Img" + e;
+          document.getElementById(pd).className = "";
+      }
+       function over(t) {
+           if (t == "0") {
+               document.getElementById("Img0").src = "image/left.png";
+           }
+           else{
+               document.getElementById("Img6").src = "image/right.png";
+           }
+       }
+       function out(t) {
+           if (t == "0") {
+               document.getElementById("Img0").src = "image/zuojiantou.png";
+           }
+           else{
+               document.getElementById("Img6").src = "image/youjiantou.png";
+           }
+       }
+   </script>
+   </head>
+   <body>
+   <h1 align="center">最新电影</h1>
+     <div id="showing" align="center">
+        <table id="banners">
+          <tr>
+           <td align="center" id="0" onmouseover="over(0)" onmouseout="out(0)" onclick="leftRotate()">
+               <img id="Img0" src="image/zuojiantou.png" /></td>
+           <td align="center" id="1" onmouseover="duiying(1)" onmouseout="pgout(1)">
+               <img id="Img1" src="image/onelife.jpg" /></td>
+           <td align="center" id="2" onmouseover="duiying(2)" onmouseout="pgout(2)">
+               <img id="Img2" src="image/houhui.jpg" /></td>
+           <td align="center" id="3" onmouseover="duiying(3)" onmouseout="pgout(3)">
+               <img id="Img3" src="image/usa.jpg" /></td>
+           <td align="center" id="4" onmouseover="duiying(4)" onmouseout="pgout(4)">
+               <img id="Img4" src="image/tiancai.jpg" /></td>
+           <td align="center" id="5" onmouseover="duiying(5)" onmouseout="pgout(5)">
+               <img id="Img5" src="image/xiaoshidai.jpg" /></td>
+           <td align="center" id="6" onmouseover="over(6)" onmouseout="out(6)" onclick="rightRotate()">
+               <img id="Img6" src="image/youjiantou.png" /></td>
+          </tr>
+          <tr>
+           <td></td>
+           <td align="center" id="Td1">
+               一生一世</td>
+           <td align="center" id="Td2">
+               后会无期</td>
+           <td align="center" id="Td3">
+               美国队长2</td>
+           <td align="center" id="Td4">
+               天才眼镜狗</td>
+           <td align="center" id="Td5">
+               小时代3</td>
+           <td></td>
+        </table>
+      </div>
+  </body>
+</html>

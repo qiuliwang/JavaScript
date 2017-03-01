@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+
+var arr=new Array("江苏省","浙江省","湖北省","湖南省","河北省","福建省");
+	function Show()
+	{
+  var lis=document.getElementsByTagName("li");
+//alert(lis.length);
+		for(var i=0;i<arr.length;i++)
+		{
+			lis.item(i).innerHTML=arr[i];
+		}
+		//在函数中调用函数
+		addOption();
+	}
+	
+	function addOption()
+	{
+		var sel=document.getElementById("sel");
+		for(var i=0;i<arr.length;i++)
+		{
+		var opts=new Option(arr[i],i);
+		sel.options.add(opts);
+		}
+	}
+	function changes()
+	{
+		var sel=document.getElementById("sel");
+		/*if(sel.value!="-1")
+		{
+			alert(arr[parseInt(sel.value)]);
+		}*/
+		for(var i=0;i<sel.length;i++)
+		{
+		 	//alert(sel.item(i).value);
+			if(sel.item(i).value==sel.value)
+			{
+				alert(sel.item(i).innerHTML);
+			}
+		}
+	}
+//当页面加载之后，执行的操作
+window.onload=Show;
+</script>
+</head>
+
+<body>
+
+<li>列表信息</li>
+<li>列表信息</li>
+<li>列表信息</li>
+<li>列表信息</li>
+<li>列表信息</li>
+<li>列表信息</li>
+
+
+<select id="sel" onchange="changes()">
+<option value="-1" selected>==请选择==</option>
+</select>
+
+
+
+</body>
+</html>

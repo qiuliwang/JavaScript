@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <form name="frm" method="post" action="">
+      <table border="1" align="center">
+        <tr>
+          <td colspan=3 align="center">
+            <input type="Text" name="text" size=12 value="0" width=100%>
+          </td>
+          <td></td>
+          <td>
+            <input type="Button" name="clear" value="C" onclick="Clear()" width=100%>
+          </td>
+        </tr>
+         <tr>
+          <td>
+            <input type="Button" name="Seven" value="7" onclick="Number(7)" width=100%>
+          </td>
+          <td>
+            <input type="Button" name="Eight" value="8" onclick="Number(8)" width=100%>
+          </td>
+          <td>
+            <input type="Button" name="Nine" value="9" onclick="Number(9)" width=100%>
+          </td>
+          <td></td>
+          <td>
+            <input type="Button" id="add" value="+" onclick="Operation('+')" width=100%>
+          </td>
+          </tr>
+          <tr>
+          <td>
+             <input type="Button" name="Four" value="4" onclick="Number(4)" width=100%>
+          </td>
+          <td>
+            <input type="Button" name="Five" value="5" onclick="Number(5)" width=100%>
+          </td>
+          <td>
+            <input type="Button" name="Six" value="6" onclick="Number(6)" width=100%>
+          </td>
+          <td></td>
+          <td>
+            <input type="Button" id="sub" value="-" onclick="Operation('-')" width=100%>
+          </td>
+          </tr>
+          <tr>
+          <td>
+            <input type="Button" name="One" value="1" onclick="Number(1)" width=100%>
+          </td>
+          <td>
+            <input type="Button" name="Two" value="2" onclick="Number(2)" width=100%>
+          </td>
+          <td>
+            <input type="Button" name="Three" value="3" onclick="Number(3)" width=100%>
+          </td>
+          <td></td>
+          <td>
+            <input type="Button" id="mul" value="*" onclick="Operation('*')" width=100%>
+          </td>
+          </tr> 
+        <tr>
+          <td>
+            <input type="Button" name="Zero" value="0" onclick="Number(0)" width=100%>
+          </td>
+          <td>
+            <input type="Button" name="Dot" value="." onclick="Number('.')" width=100%>
+          </td>
+          <td>
+            <input type="Button" name="equal" value="=" onclick="Equal()" width=100%>
+          </td>
+          <td></td>
+          <td>
+            <input type="Button" id="div" value="/" onclick="Operation('/')" width=100%>
+          </td>
+        </tr>
+      </table>
+    </form>
+   <script Language="javascript">
+      var a="";
+      var b="";
+      var type="";
+      var flag=false;
+      function Number(num){
+        if(flag){
+           document.frm.text.value="0";
+           flag=false;
+         }
+        if(document.frm.text.value == "0"&&num!=".")
+          document.frm.text.value  = num;
+        else if(num=="."){
+           if(document.frm.text.value.indexOf(".")==-1)
+             document.frm.text.value += num;
+           else
+             document.frm.text.value=document.frm.text.value;
+            }
+        else
+          document.frm.text.value += num;
+      }
+      function Operation(op)
+      {
+         a=document.frm.text.value;
+         type=op;
+         document.frm.text.value="0";
+      }
+        function Clear()
+        {
+           document.frm.text.value="0";
+           a="";
+           b="";
+           type="";
+           flag=false;
+         }
+      function Equal()
+      {
+         b=document.frm.text.value;
+         if(type){
+         switch(type){
+         case "+": document.frm.text.value=parseFloat(a)+parseFloat(b);break;
+         case "-": document.frm.text.value=parseFloat(a)-parseFloat(b);break;
+         case "*": document.frm.text.value=parseFloat(a)*parseFloat(b);break;
+         case "/": document.frm.text.value=parseFloat(a)/parseFloat(b);break;
+         }
+         flag=true;
+        }}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title>Dynamic Menus</title>
+  <script src="dynamic.js"></script>
+</head>
+<body>
+  <form action="#">
+    <select id="pro" onchange="setCity(this.value)" >
+      <option value="">省份</option>
+      <option value="0">北京市</option>
+      <option value="1">上海市</option>
+      <option value="2">天津市</option>
+      <option value="3">重庆市</option>
+      <option value="4">河北省</option>
+      <option value="5">山西省</option>
+      <option value="6">内蒙古省</option>
+      <option value="7">辽宁省</option>
+      <option value="8">吉林省</option>
+      <option value="9">黑龙江省</option>
+      <option value="10">江苏省</option>
+      <option value="11">浙江省</option>
+      <option value="12">安徽省</option>
+      <option value="13">福建省</option>
+      <option value="14">江西省</option>
+      <option value="15">山东省</option>
+      <option value="16">河南省</option>
+      <option value="17">湖北省</option>
+      <option value="18">湖南省</option>
+      <option value="19">广东省</option>
+      <option value="20">广西</option>
+      <option value="21">海南省</option>
+      <option value="22">四川省</option>
+      <option value="23">贵州省</option>
+      <option value="24">云南省</option>
+      <option value="25">西藏</option>
+      <option value="26">陕西省</option>
+      <option value="27">甘肃省</option>
+      <option value="28">青海省</option>
+      <option value="29">宁夏</option>
+      <option value="30">新疆</option>
+      <option value="31">香港</option>
+      <option value="32">澳门</option>
+      <option value="33">台湾</option>
+    </select>
+    &nbsp;
+    <select id="area" onchange="setCounty(this.value)">
+      <option>市区</option>
+    </select>
+    &nbsp;
+    <select id="county">
+      <option>县城/街道</option>
+    </select>
+  </form>
+</body>
+</html> 

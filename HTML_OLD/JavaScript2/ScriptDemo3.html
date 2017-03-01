@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+ //函数可以被重复调用
+	function show()
+	{
+		//window.alert("我被点击中了！");
+		var txtAcc= document.getElementById("txtAccount");
+		if(txtAcc.value=="")
+		{
+			alert("请输入账号！");
+			txtAcc.focus();//把光标移动到控件中
+			return;
+		}
+		var txtPwd=document.getElementById("txtPwd");
+		if(txtPwd.value.length==0)
+		{
+			alert("请输入密码！");
+			txtPwd.focus();//把光标移动到控件
+			return;
+		}
+	}
+</script> 
+</head>
+
+<body>
+<form action="#" method="post">
+	<table border="1" cellspacing="0">
+    	<tr>
+        	<th colspan="2">登陆信息</th>
+        </tr>
+        <tr>
+        	<td>账号：</td>
+            <td><input type="text" id="txtAccount" value="1234" /></td>
+        </tr>
+        <tr>
+        	<td>密码：</td>
+            <td><input type="password" id="txtPwd" /></td>
+        </tr>
+        <tr>
+        	<td colspan="2" align="center">
+            <input type="button" value="提 交" onclick="show();" />
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

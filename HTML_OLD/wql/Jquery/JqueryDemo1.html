@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<!--加载Jquery 脚本库文件-->
+<script src="Script/jquery-1.6.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+/*
+ var div1=document.getElementById("div1");
+ 
+ var $div1=$("#div1");
+ 
+ $div1=$("div");
+
+$div1=$(".class1");
+*/
+
+
+$(function(){
+	$(".class1").css("background","red");
+	});
+	
+$(function(){
+	$("#div1").css("width","500px");
+	
+	$("#submit").click(function(){
+		
+		//alert($("input[type=radio]").length);
+		//alert($(":radio").length);
+		
+		//Dom 对象  只描述一个物体
+		//var male=document.getElementById("rdoMale");
+		
+		// jquery对象  描述对个物体 （复数）
+		var $sex=$(":radio");
+		//Jquery 对象转换成DOM对象
+		if($sex[0].checked)
+		{
+			alert("你选择了男！");
+		}
+		else if($sex[1].checked)
+		{
+			alert("你选择了女！");
+		}
+		});
+		
+		
+	
+	
+	
+		$(":button").val("提 交");
+		//Jquery 对象转换成DOM对象
+		var btn1 =$(":button")[0];
+		
+		//DOM对象转换成功Jquery对象
+		var $btn1=$(btn1);
+		
+		$btn1.val("Jquery对象被转换了！") ;
+		
+	
+	$("tr:even").css("background","red");
+	$("tr:odd").css("background","blue");
+		
+	});
+	
+	
+	
+	function Sub()
+	{
+		var male=document.getElementById("rdoMale");
+		var female=document.getElementById("rdoFemale");
+		
+		if(male.checked)
+		{
+			alert("你选择了男！");
+		}
+		else if(female.checked)
+		{
+			alert("你选择了女！");
+		}
+	}
+	
+	
+/*
+window.onload=function(){
+	
+ var div1=document.getElementById("div1");
+ div1.style.backgroundColor="blue";
+}
+
+window.onload=function(){
+	
+ var div1=document.getElementById("div1");
+ div1.style.width="500px";
+}*/
+</script>
+
+<style type="text/css">
+.class1
+{
+	width:100px;
+	height:100px;
+}
+table
+{
+	width:400px;
+	height:200px;
+}
+</style>
+</head>
+
+<body>
+<div id="div1" class="class1"></div>
+<br />
+<input type="radio" id="rdoMale" value="男" name="sex" checked="checked"/>男
+<input type="radio" id="rdoFemale" value="女"  name="sex"/>女
+<input type="button" value="提 交1" onclick="Sub();" />
+<input type="button" id="submit" value="提 交2"  />
+
+
+<table border="1" cellspacing="0" >
+	<tr>
+    	<td ></td>
+    </tr>
+    <tr>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td></td>
+    </tr>
+      <tr>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td></td>
+    </tr>
+      <tr>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td></td>
+    </tr>
+      <tr>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td></td>
+    </tr>
+      <tr>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td></td>
+    </tr>
+</table>
+</body>
+</html>
