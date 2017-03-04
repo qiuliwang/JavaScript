@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    function addTen(num)
+    {
+        num += 10;
+        return num;
+    }
+
+    var num1 = 10;
+    var num2 = addTen(num1);
+    //alert(num1.toString() + " " + num2.toString());
+
+    function setName(obj)
+    {
+        obj.name = "Li"
+    }
+
+    var person = new Object();
+    person.name = "wang"
+    alert(person.name);
+
+    setName(person);
+    alert(person.name);
+
+</script>
+</head>
+<body>
+
+<button type="button">exercises</button>
+</body>
+</html>
