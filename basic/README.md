@@ -1,1 +1,2 @@
-在HTML中使用JavaScript
+基本概念
+语法标识符
